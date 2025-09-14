@@ -1,4 +1,4 @@
-// backend/server.js (FINAL VERSION with response cleaning)
+// backend/server.js 
 
 const express = require('express');
 const cors = require('cors');
@@ -38,13 +38,11 @@ app.post('/analyze', async (req, res) => {
     const response = await result.response;
     const rawText = response.text();
 
-    // --- THIS IS THE FIX ---
-    // The AI wraps the JSON in a markdown block (```json ... ```). 
-    // We will extract just the JSON part from the raw text.
+   
     const startIndex = rawText.indexOf('{');
     const endIndex = rawText.lastIndexOf('}');
     const jsonString = rawText.substring(startIndex, endIndex + 1);
-    // ----------------------
+    
 
     const analysisResult = JSON.parse(jsonString);
     res.json(analysisResult);

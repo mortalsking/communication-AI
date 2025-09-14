@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-// A simple SVG spinner component
+
 const LoadingSpinner = () => (
   <div className="flex justify-center items-center">
     <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
@@ -46,14 +46,14 @@ function App() {
     };
 
     return (
-        // Changed page background to a softer, off-white "Notion" color
+        
         <div className="bg-stone-100 min-h-screen font-sans flex flex-col items-center p-4 sm:p-8 transition-colors duration-300">
             <header className="text-center mb-10">
                 <h1 className="text-4xl sm:text-5xl font-bold text-slate-800 tracking-tight">CommunicateAI Demo</h1>
                 <p className="text-slate-500 mt-3 text-lg">Paste your text below for instant AI-powered feedback.</p>
             </header>
 
-            {/* Changed card to stark white with a more subtle shadow and border */}
+            
             <main className="w-full max-w-2xl bg-white p-6 sm:p-8 rounded-xl shadow-md border border-slate-200">
                 <form onSubmit={handleSubmit}>
                     <textarea
@@ -62,13 +62,13 @@ function App() {
                         placeholder="Example: 'I think we should probably consider maybe looking into new options.'"
                         rows="6"
                         required
-                        // Softer border on the textarea
+                        
                         className="w-full p-4 bg-stone-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all duration-300"
                     />
                     <button
                         type="submit"
                         disabled={isLoading}
-                        // Updated button to a solid, minimalist Notion-style button
+                        
                         className="w-full mt-4 bg-slate-800 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-600 transition-all duration-300 disabled:bg-slate-400 disabled:cursor-not-allowed flex justify-center items-center"
                     >
                         {isLoading ? <LoadingSpinner /> : 'Analyze My Communication'}
